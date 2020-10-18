@@ -1,6 +1,7 @@
 def capital_case(x):
     return x.capitalize()
 
+
 def multiply_two(y):
     return y * 2
 
@@ -9,6 +10,7 @@ def multiply_two(y):
 def test_capital_case():
     assert capital_case('test') == 'Test'
 
+    
 def test_multiply_two():
     assert multiply_two(2) == 4
     assert multiply_two(4) == 8
