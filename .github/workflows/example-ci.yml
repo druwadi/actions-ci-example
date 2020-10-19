@@ -8,7 +8,7 @@ jobs:
   # when a job name is not provided
   lint:
     # Name the Job
-    name: Lint code base
+    name: Lint Python Code
     # Set the type of machine to run on
     runs-on: ubuntu-latest
 
@@ -22,11 +22,30 @@ jobs:
         with:
           python-version: '3.x'
 
+      # Runs Pylint against code
       - name: Lint Code
         run: |
           pip3 install pylint
           pylint --disable=W,C,R main.py
   
+  test:
+    # Name the Job
+    name: Test Python Code
+    # Set the type of machine to run on
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checks out a copy of your repository on the ubuntu-latest machine
+      - name: Checkout code
+        uses: actions/checkout@v2
+      
+      # Sets up what Python version to install
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+  
+      # Runs PyTest against code
       - name: Test Code
         run: |
           pip3 install pytest
