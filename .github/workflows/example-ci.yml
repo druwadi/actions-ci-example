@@ -29,6 +29,7 @@ jobs:
           pylint --disable=W,C,R main.py
   
   test:
+    needs: lint
     # Name the Job
     name: Test Python Code
     # Set the type of machine to run on
