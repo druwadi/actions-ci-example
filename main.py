@@ -5,7 +5,7 @@ def capital_case(x):
 def multiply_two(y):
     return y * 2
 
-# Tests
+# Tests are below
 
 def test_capital_case():
     assert capital_case('test') == 'Test'
